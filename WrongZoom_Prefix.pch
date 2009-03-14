@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'WrongZoom' target in the 'WrongZoom' project.
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif
