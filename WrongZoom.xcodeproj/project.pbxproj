@@ -195,8 +195,9 @@
 				GCC_PREFIX_HEADER = WrongZoom_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
 				PRODUCT_NAME = WrongZoom;
-				SDKROOT = macosx10.5;
+				SDKROOT = macosx10.4;
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = Debug;
@@ -212,6 +213,7 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
 				PRODUCT_NAME = WrongZoom;
+				SDKROOT = macosx10.4;
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = Release;
@@ -226,7 +228,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
-				SDKROOT = macosx10.5;
+				SDKROOT = macosx10.4;
 			};
 			name = Debug;
 		};
