@@ -17,7 +17,7 @@ static NSRect sizer(id self, SEL _cmd, NSWindow *window, NSRect newFrame) {
 static void swizzleSizer(Class class) {
 	Method sizerMethod = class_getInstanceMethod(class, @selector(windowWillUseStandardFrame:defaultFrame:));
 	if(sizerMethod != NULL)
-		sizerMethod->method_imp = (IMP)sizer;
+		method_setImplementation(sizerMethod, (IMP)sizer);
 }
 
 // - (void)zoom:(id)sender
@@ -34,8 +34,8 @@ static void zoomer(id self, SEL _cmd, id sender) {
 	NSLog(@"loaded WrongZoom");
 	Class class = NSClassFromString(@"NSWindow");
 	Method zoomMethod = class_getInstanceMethod(class, @selector(zoom:));
-	oldZoomer = zoomMethod->method_imp;
-	zoomMethod->method_imp = (IMP)zoomer;
+	oldZoomer = method_getImplementation(zoomMethod);
+	method_setImplementation(zoomMethod, (IMP)zoomer);
 }
 
 @end
